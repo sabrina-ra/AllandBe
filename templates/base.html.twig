@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="autor" content="DJIBRIL BADJI, Pierre, Sabrina, Alexandre">
+        <meta name="description" content="Site E-commerce">
+        <title> allandbe {% block title %} {% endblock %}</title> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="icon" type="image/png" href="{{ asset('images/logo/logo.png')}}"/>
+        <link rel="stylesheet" href="{{ asset( "css/style.css") }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        
+        {% block stylesheets %}
+        
+        {% endblock %}
+    </head>
+    <body>
+
+        <p>Bonjour, base</p>
+        {% block body %}{% endblock %}
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+        <script src="https://kit.fontawesome.com/c28c69092d.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{{ asset('script/script.js')}}"></script>
+        <script> 
+        $(document).ready(function(){
+            bsCustomFileInput.init()
+        })
+        </script>
+        {% block javascript %}{% endblock %}
+    </body>
+</html>
