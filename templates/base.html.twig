@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
 
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <meta name="autor" content="DJIBRIL BADJI, Pierre, Sabrina, Alexandre">
+        <meta name="autor" content="Sabrina Rabhi">
         <meta name="description" content="Site E-commerce">
         <title> allandbe {% block title %} {% endblock %}</title> 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="icon" type="image/png" href="{{ asset('images/logo/logo.png')}}"/>
-        <link rel="stylesheet" href="{{ asset( "css/style.css") }}">
+        <link rel="stylesheet" href="{{ asset( "css/styleBase.css") }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         
         {% block stylesheets %}
@@ -18,8 +18,109 @@
     </head>
     <body>
 
-        <p>Bonjour, base</p>
-        {% block body %}{% endblock %}
+        <header class="container-fluid">
+            <section class="header-top col-12">
+                <div class="nav">
+                    <div class="lang">
+                         <img src="{{ asset('images/lang/flag-fr.png')}}" alt="Drapeau de France">
+                    </div>
+                    <div class="nav-links">
+                        <ul>
+                            <li><a href="#">Ma commande</a></li>
+                            <li><a href="#">Aide et contact</a></li>
+                            <li><a href="#">Connexion</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="header-buttom col-12">
+                <div class="header-logo">
+                    <a href="#"><img src="{{ asset('images/logo/allandbe-logo.jpg')}}" alt="All and Be logo"></a>
+                </div>
+
+                <div class="icons">
+                    <a href="#"><i class="fas fa-search"></i></a>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                    <a href="#"><i class="fas fa-shopping-bag"></i></a>
+ 
+                </div>
+            </section>
+        </header>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="">Page 1</a>
+                </li>
+                <li>
+                    <a href="">Page 2</a>
+                </li>
+                <li>
+                    <a href="">Page 3</a>
+                </li>
+                <li>
+                    <a href="">Page 4</a>
+                </li>
+                <li>
+                    <a href="">Page 5</a>
+                </li>
+            </ul>
+        </nav> 
+
+        {% block body %}
+         
+        {% endblock %}
+
+
+        <footer class="container-fluid">
+            <div class="container">
+                <div class="row">
+                <div class="about-us col-3">
+                    <h3>Qui sommes nous</h3>
+                    <ul> 
+                        
+                        <li>L'histoire</li>
+                        <li>Notre concept</li>
+                        <li>Notre équipe</li>
+                    </ul>
+                    
+                </div>
+               <div class="all-and-be col-3">
+                    <h3>All and Be</h3>
+                    <ul>
+                        <li>Mentions Légales</li>
+                        <li>CGV et CGU</li>
+                        <li>Paiement sécurisé</li>
+                        <li>Plan du site</li>
+                    </ul>
+                </div>
+
+                <div class="help col-3">
+                    <h3>Help</h3>
+                    <ul>
+                        <li>Guide des tailles </li>
+                        <li>Conseil</li>
+                        <li>Faq</li>
+                        <li>Livraison</li>
+                        <li>Conactez-nous</li>
+                        <li>Retour/Echange</li>
+                    </ul>
+                </div>
+
+                
+
+                <div class="social-media col-3">
+                    <h3>Réseaux sociaux</h3>
+                    <ul>
+                        <li>Instagram</li>
+                    </ul>
+                </div>
+
+            </div>
+           </div>
+
+        </footer>
 
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
