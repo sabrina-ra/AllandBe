@@ -6,15 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class BrandController extends AbstractController
+class BrandPublishDocsController extends AbstractController
 {
-    #[Route('/brand', name: 'brand')]
+    #[Route('/brand/publishdocs', name: 'brand_publish_docs')]
     public function index(): Response
     {
-        return $this->render('brand/index.html.twig', [
-            'controller_name' => 'BrandController',
+        return $this->render('brand/publishDocs.html.twig', [
+            'controller_name' => 'BrandPublishDocsController',
         ]);
     }
-
-
 }

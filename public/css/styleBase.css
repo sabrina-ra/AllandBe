@@ -63,7 +63,27 @@ header{
     color: #333333;
 
 }
+/******************************MAIN*****************************/
+main{
+    margin: 20px 0 100px;
+}
 
+main .navbar-expand-lg .navbar-nav{
+    width: 100%;
+    align-self: center;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    background-color:#0a1752;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: whitesmoke;
+    font-weight: 700;
+}
 /******************************FOOTER**************************/
 footer h3{
     font-size: 14px ;
