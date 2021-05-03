@@ -29,21 +29,22 @@ class BrandRegistrationType extends AbstractType
                 'label'=> 'Numéro SIRET',
                 'attr'=>[
                     'placeholder' => "Numéro SIRET",
-                    'min'=>9,
-                    'max'=>14,
+                    'min'=>000000001,
+                    'max'=>9999999999999,
+                    
                 ],
                 
 
             ])
             ->add('business_type', ChoiceType::class, [
                 'choices'=>[
+                    '-choix-'=> '',
                     'B vers B'=> 'B vers B',
                     'B vers C'=> 'B vers C',                    
                     'C vers C'=> 'C vers C',
                 ],
                 'required'=>true,
                 'multiple'=>false, 
-                'expanded'=>true,
                 'label'=>'Type dy commerce',
                 'attr'=>[
                     'placeholder' => "Type de commerce",
@@ -52,13 +53,13 @@ class BrandRegistrationType extends AbstractType
             ] )
             ->add('company_type', ChoiceType::class, [
                 'choices'=>[
+                    '-choix-'=> '',
                     'Entreprise petite'=> 'Entreprise petite',
                     'Moyenne entreprise'=> 'Moyenne entreprise',                    
                     'Grande entreprise'=> 'Grande entreprise',
                 ],
                 'required'=>true,
                 'multiple'=>false, 
-                'expanded'=>true,
                 'label'=>'Type d\'entreprise',
                 'attr'=>[
                     'placeholder' => "Type d\'entreprise",
@@ -67,13 +68,13 @@ class BrandRegistrationType extends AbstractType
             ])
             ->add('market_type', ChoiceType::class, [
                 'choices'=>[
+                    '-choix-'=> '',
                     'Marketplace'=> 'Marketplace',
                     'Option2'=> 'Option2',                    
                     'Option3'=> 'Option3',
                 ],
                 'required'=>true,
                 'multiple'=>false, 
-                'expanded'=>true,
                 'label'=>'Type de marché',
                 'attr'=>[
                     'placeholder' => "Type de marché",
@@ -81,32 +82,34 @@ class BrandRegistrationType extends AbstractType
             ])
             ->add('secteur', ChoiceType::class, [
                 'choices'=>[
+                    '-choix-'=> '',
                     'Magasin de mode/accessoires/objets'=> 'Magasin de mode/accessoires/objets',
                     'Option 3'=>'Oprion2',
                     'Option 2'=> 'Option 3',
                 ],
                 'required'=>true,
                 'multiple'=>false, 
-                'expanded'=>true,
                 'label'=>'Secteur',
                 'attr'=>[
                     'placeholder' => "Secteur",
                 ],
             ])
-            ->add('speciality', ChoiceType::class, [
-                'choices'=>[
-                    'Vêtements et accessoires'=>'Vêtements et accessoires',
-                    'Spécialité 2'=> 'Specialité 2',
-                ],
+            ->add('speciality', ChoiceType::class, [ 
                 'required'=>true,
+                'choices'=>[
+                    '-choix-'=> '',
+                    'Vêtements et accessoires'=>'Option1',
+                    'Spécialité 2'=> 'Option2',
+                ],
+               
                 'multiple'=>false, 
-                'expanded'=>true,
                 'label'=>'Specialité',
                 'attr'=>[
                     'placeholder' => "Spécialité",
                 ],
 
             ])
+        
             ->add('address', TextType::class, [
                 'required'=>true,
                 'label'=> 'Adresse',
@@ -172,6 +175,8 @@ class BrandRegistrationType extends AbstractType
 
             ->add('valider', SubmitType::class)
         ;
+
+
     }
 
     public function configureOptions(OptionsResolver $resolver)

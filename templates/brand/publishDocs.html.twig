@@ -7,6 +7,35 @@
  {% endblock %}
  
 {% block body %}
-
+<div  id="publish-docs-form" class="row input-group-prepend justify-content-center"> 
+                
+  <div class="card col-6-md-1"> 
+      <div class="card-body">
+          <h2 class="text-center mt-4">Publier vos documents</h2> 
+          {{ form_start(publishDocsForm) }} 
+              <div class="row form-group">
+                  <div class="col-4 ">
+                      {{ form_row(publishDocsForm.status) }}
+                  </div>
+                  <div class="col-4">
+                      {{ form_row(publishDocsForm.piece_identite) }}
+                  </div>
+                  <div class="col-4">
+                    {{ form_row(publishDocsForm.conditions_generales) }}
+                  </div>                  
+            </div> 
+            
+            <div class="row form-group">
+              <div class="col-4">
+                  {{ form_row(publishDocsForm.preuve_enregistrement) }}
+              </div>
+              <div class="col-4">
+                  {{ form_row(publishDocsForm.table_capitalisation) }}
+              </div>
+              <div class="col-4">
+                {{ form_row(publishDocsForm.coordonnees_bancaires) }}
+              </div>
+              
+          </div> 
 
 {% endblock %}

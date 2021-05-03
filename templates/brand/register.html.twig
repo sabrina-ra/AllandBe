@@ -8,9 +8,135 @@
  
  
  {% block body %}
+   {{ dump(brandRegistrationForm) }}
+{% for message in app.flashes('success') %}
+   <div class="alert alert-success" role="alert">{{ message }}</div>
+{% endfor %}
+
+ 
+
+
+
+<div  id="register-form" class="row input-group-prepend justify-content-center"> 
+                
+    <div class="card col-6-md-1"> 
+        <div class="card-body">
+            <h2 class="text-center mt-4">S'enregistrer</h2> 
+            {{ form_start(brandRegistrationForm) }} 
+                {{ form_row(brandRegistrationForm.name, {
+                    label: 'Dénomination sociale'
+                }) }}                 
+        
+                <div class="row form-group">
+                    <div class="col-6">
+                        {{ form_row(brandRegistrationForm.siret, {
+                            label: 'Numéro SIRET'
+                        }) }}
+                    </div>
+                    <div class="col-6">
+                        {{ form_row(brandRegistrationForm.business_type, {
+                            label: 'Type de commerce'
+                        }) }}
+                    </div>
+                    
+                </div>                       
+                <div class="form-group row">   
+                    <div class="col-6">
+                        {{ form_row(brandRegistrationForm.company_type) }}
+                    </div>
+                    <div class="col-6">
+                        {{ form_row(brandRegistrationForm.market_type, {
+                        label: 'Type de marché'}) }}
+                    </div>                        
+                </div>  
   
- {{ form_start(brandRegistrationForm) }}
- {{ form_end(brandRegistrationForm) }}
+                {{ form_row(brandRegistrationForm.secteur, {
+                label: 'secteur'
+                }) }}
+            
+                  
+                <div >
+                  {{ form_label(brandRegistrationForm.speciality) }}
+                  {{ form_widget(brandRegistrationForm.speciality) }}
+              </div>
+  
+                  <div>
+                        {{ form_row(brandRegistrationForm.address, {
+                            label: 'Adresse'
+                        }) }}
+                  </div>
+                <div class="form-group row" id="address" >
+                    
+                    <div class="col-6">
+                        {{ form_row(brandRegistrationForm.zip_code, {
+                            label: 'Code postal'
+                        }) }}
+                    </div>
+                    <div class="col-6">
+                        {{ form_row(brandRegistrationForm.city, {
+                            label: 'Ville'
+                        }) }}
+                    </div>
+  
+                    <div class="col-6">
+                      {{ form_row(brandRegistrationForm.district, {
+                          label: 'Région'
+                      }) }}
+                  </div>
+                  <div class="col-6">
+                      {{ form_row(brandRegistrationForm.country) }}
+                  </div>
+                    
+                </div>
+                <div>
+                {{ form_row(brandRegistrationForm.tva_number) }}
+              </div>
+  
+              <div class="form-group row" id="volume-annuel" >
+                <div class="col-6">
+                    {{ form_row(brandRegistrationForm.volume_prevu) }}
+                </div>
+                <div class="col-6">
+                    {{ form_row(brandRegistrationForm.volume_reel) }}
+                </div>
+              </div>
+              
+                <div class="text-center">
+                    {{ form_row (brandRegistrationForm.valider)}}
+                </div>
+  
+                
+                  <!-- <select id="form_select1"
+                    name=
+                    required="required"
+                    class="custom-select"
+                    aria-described-by="help-text-form_select1">
+                    <option value=""
+                      selected="selected">
+                      Select an option...
+                    </option>
+                    <!--Other `option` nodes-->
+                  <!-- </select>
+                  <div class="form-help-text"
+                    id="help-text-form_select1">
+                    Help text
+                  </div>
+                </div>
+  
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                  <option selected>Open this select menu</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="">Three</option>
+                </select> -->
+  
+               
+            {{ form_end(brandRegistrationForm) }}
+               
+        </div>
+    </div> 
+  </div> 
+
 
 
 {% endblock %}

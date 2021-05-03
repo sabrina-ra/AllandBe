@@ -44,6 +44,7 @@ class BrandRegisterController extends AbstractController
         }
         return $this->render('brand/register.html.twig', [
             'brandRegistrationForm' => $form->createView(),
+        
         ]);
 
     }
